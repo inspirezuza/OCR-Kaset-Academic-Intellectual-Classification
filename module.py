@@ -22,22 +22,6 @@ pytesseract.pytesseract.tesseract_cmd = os.getcwd() + r'\installation\tesseract\
 header_offset = 0
 footer_offset = 600 
 
-#name_agency
-art = ['ณะศิลป']
-engineer = ['วิศว']
-science = ['ณะวิทย']
-forest = ['ณะวน']
-farmer = ['ณะเกษตร']
-afarmer = ['ณะอุตสาหกรรมเกษตร']
-social = ['ณะสังคม']
-education = ['ณะศึกษา']
-human = ['ณะมนุษย']
-business = ['ณะบริหาร']
-animal = ['ณะสัตว']
-achitect = ['ณะสถา']
-fish = ['ณะประ']
-ETO = ['ส่งเสริม']
-
 #nametype
 zero_one = ['เนินโ']
 zero_two = ['เปลี่ยนแปลง'] 
@@ -62,10 +46,6 @@ def filename_to_img(folder_path, file_name):
 def crop_img(img):
   return img.crop((0, header_offset, img.width, footer_offset))
 
-# def save_img(img, img_name='temp.jpg'):
-#   img.save(f"/content/{img_name}")
-#   return (f"/content/{img_name}")
-
 def thai_to_arabic(s): 
     
   thai = ['๐','๑','๒','๓','๔','๕','๖','๗','๘','๙']
@@ -85,21 +65,6 @@ def thai_to_arabic(s):
 
   return ns
 
-# art = ['ณะศิลป']
-# engineer = ['วิศว']
-# science = ['ณะวิทย']
-# forest = ['ณะวน']
-# farmer = ['ณะเกษตร']
-# afarmer = ['ณะอุตสาหกรรมเกษตร']
-# social = ['ณะสังคม']
-# education = ['ณะศึกษา']
-# human = ['ณะมนุษย']
-# business = ['ณะบริหาร']
-# animal = ['ณะสัตว']
-# achitect = ['ณะสถา']
-# fish = ['ณะประ']
-# ETO = ['ส่งเสริม']
-
 def polish_string_data(raw_string_data):
   return raw_string_data.replace('\n', '')
 
@@ -109,10 +74,6 @@ def for_i_in_s(l,s):
       return True
   return False
 
-# zero_one = ['เนินโ']
-# zero_two = ['เปลี่ยนแปลง'] 
-# zero_three = ['ปิด', 'มก.พว.03'] 
-# zero_four = ['ขยาย'] 
 def name_type(string_data):
   file_name = ''
 
@@ -245,12 +206,9 @@ def start(folder_path, stop=-1, DEBUG=False):
     images = []
     img = filename_to_img(folder_path, filename)
     cimg = crop_img(img)
-    # img_path = save_img(cimg, img_name)
-    # display(cimg)
 
     #2
     raw_string_data = pytesseract.image_to_string(cimg, 'tha')
-    # print(raw_string_data)
 
     #3
     string_data = polish_string_data(raw_string_data)
