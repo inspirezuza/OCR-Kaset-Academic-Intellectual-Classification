@@ -15,7 +15,7 @@ The program is implemented using the Python programming language and relies on s
 To use this program, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Ensure you have the required dependencies installed, including Python and Tesseract OCR. You can download the necessary dependencies from the following link: [pytesseract and poppler installation](https://drive.google.com/file/d/1CeqV1tqzxLldxl8GSy41X3QpYCNA3JvR/view?usp=drive_link).
+2. Ensure you have the required dependencies installed and using vitualenv, including Python and Tesseract OCR. You can download the necessary dependencies from the following link: [pytesseract and poppler installation](https://drive.google.com/file/d/1CeqV1tqzxLldxl8GSy41X3QpYCNA3JvR/view?usp=drive_link).
 3. Place the scanned image files that you want to process in the appropriate directory. You can specify the directory in the setup.txt file.
 4. Run the program by executing the run.bat file.
 5. The program will introduce a 3-second delay before processing and classifying the documents based on the information provided in the agency.txt file. The files will also be renamed according to the classification.
